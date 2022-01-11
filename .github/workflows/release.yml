@@ -41,7 +41,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
   release:
-    if: ${{ github.ref_type == "tag" }}
+    if: ${{ github.ref_type == 'tag' }}
     name: "🚀 Release"
     runs-on: ubuntu-20.04
     steps:
