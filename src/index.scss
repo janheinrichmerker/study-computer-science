@@ -1,0 +1,49 @@
+@import "./theme.scss";
+
+#root > .container {
+  padding-top: $spacer;
+  padding-bottom: max($navbar-brand-height, $nav-link-height) + 2 * $spacer;
+}
+
+.player-container {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+
+  > * {
+    position: absolute;
+    padding: 0;
+  }
+
+  > .player {
+    width: 100% !important;
+    height: 100% !important;
+    video {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  > .player-option-left {
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    opacity: 50%;
+  }
+
+  > .player-option-right {
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    opacity: 50%;
+  }
+
+  > .player-progress {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+}
