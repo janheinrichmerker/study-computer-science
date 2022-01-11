@@ -2,7 +2,6 @@ import { FunctionComponent } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { StoryPlayer } from "./components";
 import { config } from "./config";
-import { Story } from "./model";
 
 
 export const HomePage: FunctionComponent = () => {
