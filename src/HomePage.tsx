@@ -6,13 +6,21 @@ import { config } from "./config";
 
 export const HomePage: FunctionComponent = () => {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <h2>Studiere Informatik!</h2>
-        </Col>
-      </Row>
-      <StoryPlayer {...config} />
-    </Container>
+    <div className="div-full">
+      <div className="background"/>
+          <Container style={{position: 'absolute'}}>
+            <div className="container-background" />
+            <Row>
+                <Col>
+                  <h1> Studiere Informatik </h1>
+                </Col>
+            </Row>
+            <Row>
+              <Col>
+                <StoryPlayer {...config} />
+              </Col>
+            </Row>
+          </Container>
+      </div>
   );
 };
