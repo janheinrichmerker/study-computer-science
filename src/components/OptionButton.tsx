@@ -4,18 +4,18 @@ import { Choice, ChoiceEvent, EventType, Side, StoryEvent } from "../model";
 
 function optionClassName(side: Side): string {
   switch (side) {
-    case Side.Left:
-      return "player-option-left";
-    case Side.Right:
-      return "player-option-right";
+    case Side.Top:
+      return "player-option-top";
+    case Side.Bottom:
+      return "player-option-bottom";
   }
 }
 function optionChoice(side: Side, event: ChoiceEvent): Choice {
   switch (side) {
-    case Side.Left:
-      return event.left;
-    case Side.Right:
-      return event.right;
+    case Side.Top:
+      return event.top;
+    case Side.Bottom:
+      return event.bottom;
   }
 }
 

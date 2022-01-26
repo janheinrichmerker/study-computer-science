@@ -28,7 +28,17 @@ export const AppNav: FunctionComponent = () => {
         <Navbar.Toggle aria-controls={`${id}-collapse`} />
         <Navbar.Collapse id={`${id}-collapse`}>
           <Nav className="mr-auto">
-            <Nav.Link>Home</Nav.Link>
+            <Nav.Link href="https://informatik.uni-halle.de/" rel="noreferrer">
+              In Halle
+            </Nav.Link>
+          </Nav>
+          <Nav className="mr-auto">
+            <Nav.Link
+              href="https://hs-anhalt.de/hitanhalt/l-i-v-e/fachbereich-informatik-und-sprachen.html"
+              rel="noreferrer"
+            >
+              In Köthen
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

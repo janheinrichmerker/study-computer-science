@@ -23,17 +23,29 @@ export const AppFooter: FunctionComponent = () => {
       <Container>
         <Navbar.Toggle aria-controls={`${id}-collapse`} />
         <Navbar.Collapse id={`${id}-collapse`}>
-          <Navbar.Text>© Copyright Information</Navbar.Text>
+          <Navbar.Text>© Max Henze, Jan Heinrich Reimer</Navbar.Text>
           <Col />
           <Nav>
-            <Nav.Link>Imprint</Nav.Link>
-            <Nav.Link>Privacy</Nav.Link>
+            <Nav.Link
+              href="https://heinrich.reimer.family/de/imprint/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Impressum
+            </Nav.Link>
+            <Nav.Link
+              href="https://heinrich.reimer.family/de/privacy/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Privacy
+            </Nav.Link>
             <Nav.Link
               href="https://github.com/heinrichreimer/study-computer-science/"
               target="_blank"
               rel="noreferrer"
             >
-              GitHub
+              Quellcode
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

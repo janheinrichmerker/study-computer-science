@@ -15,8 +15,8 @@ export interface JumpEvent extends BaseEvent {
 }
 
 export enum Side {
-  Left,
-  Right,
+  Top,
+  Bottom,
 }
 
 export interface Choice {
@@ -25,18 +25,18 @@ export interface Choice {
   readonly destination: number;
 }
 
-export interface LeftChoice extends Choice {
-  readonly side: Side.Left;
+export interface TopChoice extends Choice {
+  readonly side: Side.Top;
 }
-export interface RightChoice extends Choice {
-  readonly side: Side.Right;
+export interface BottomChoice extends Choice {
+  readonly side: Side.Bottom;
 }
 
 export interface ChoiceEvent {
   readonly type: EventType.Choice;
   readonly time: number;
-  readonly left: LeftChoice;
-  readonly right: RightChoice;
+  readonly top: TopChoice;
+  readonly bottom: BottomChoice;
 }
 
 export type StoryEvent = JumpEvent | ChoiceEvent;

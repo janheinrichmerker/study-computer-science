@@ -14,9 +14,9 @@ import { HomePage } from "./HomePage";
 export const App: FunctionComponent = () => {
   return (
     <Fragment>
-      {/* <AppNav /> */}
+      <AppNav />
       <HomePage />
-      {/* <AppFooter /> */}
+      <AppFooter />
     </Fragment>
   );
 };

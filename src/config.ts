@@ -7,13 +7,13 @@ export const config: StoryPlayerProps = {
     {
       type: EventType.Choice,
       time: 2.5,
-      left: {
-        side: Side.Left,
+      top: {
+        side: Side.Top,
         title: "Example option A",
         destination: 2.5,
       },
-      right: {
-        side: Side.Right,
+      bottom: {
+        side: Side.Bottom,
         title: "Example option B",
         destination: 5,
       },
