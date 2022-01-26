@@ -1,5 +1,7 @@
 import {
   faBackward,
+  faCompress,
+  faExpand,
   faForward,
   faPause,
   faPlay,
@@ -13,6 +15,7 @@ import { Container, OverlayTrigger, Tooltip } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import { OptionButton, Timestamp } from ".";
 import { EventType, Side, Story } from "../model";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 export interface StoryPlayerProps {
   story: Story;
@@ -48,17 +51,19 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
     player?.seekTo(currentEvent.destination);
   }
 
+  const fullScreenHandle = useFullScreenHandle();
+
   return (
-    <Fragment>
-      <Container
-        className="player-container"
-        onKeyPress={(event) => {
-          if (event.key === " ") {
-            togglePlaying();
-            return false;
-          }
-        }}
-      >
+    <Container
+      className="player-container"
+      onKeyPress={(event) => {
+        if (event.key === " ") {
+          togglePlaying();
+          return false;
+        }
+      }}
+    >
+      <FullScreen handle={fullScreenHandle}>
         <ReactPlayer
           className="player"
           ref={playerRef}
@@ -169,6 +174,31 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
               </span>
             </OverlayTrigger>
           </button>
+          <button
+            className="player-play-button"
+            onClick={
+              fullScreenHandle.active
+                ? fullScreenHandle.exit
+                : fullScreenHandle.enter
+            }
+          >
+            <OverlayTrigger
+              placement="top"
+              overlay={
+                <Tooltip>
+                  {fullScreenHandle.active
+                    ? "Vollbild verlassen"
+                    : "Vollbild öffnen"}
+                </Tooltip>
+              }
+            >
+              <span>
+                <FontAwesomeIcon
+                  icon={fullScreenHandle.active ? faCompress : faExpand}
+                />
+              </span>
+            </OverlayTrigger>
+          </button>
         </div>
         <button
           className="player-big-play-button"
@@ -177,15 +207,7 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
         >
           <FontAwesomeIcon icon={playing ? faPause : faPlay} size="4x" />
         </button>
-      </Container>
-      {/* <div className="debug">
-        {JSON.stringify(currentEvent)}
-        <br />
-        Duration: {duration}
-        <br />
-        Progress: {progress}
-        <br />
-      </div> */}
-    </Fragment>
+      </FullScreen>
+    </Container>
   );
 };
