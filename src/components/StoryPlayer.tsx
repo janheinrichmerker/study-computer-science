@@ -1,7 +1,15 @@
-import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBackward,
+  faForward,
+  faPause,
+  faPlay,
+  faStepBackward,
+  faStepForward,
+  faUndo,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, FunctionComponent, useRef, useState } from "react";
-import { Container, ProgressBar } from "react-bootstrap";
+import { Container, OverlayTrigger, Tooltip } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import { OptionButton, Timestamp } from ".";
 import { EventType, Side, Story } from "../model";
@@ -26,6 +34,12 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
 
   const togglePlaying = () => setPlaying(!playing);
 
+  const seekStart = () => player?.seekTo(0);
+  const seekForward = () => player?.seekTo(progress + 10);
+  const seekBackward = () => player?.seekTo(progress - 10);
+  const stepForward = () => player?.seekTo(progress + tick);
+  const stepBackward = () => player?.seekTo(progress - tick);
+
   const currentEvent = story.find(
     (event) => event.time - tick <= progress && progress < event.time
   );
@@ -41,6 +55,7 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
         onKeyPress={(event) => {
           if (event.key === " ") {
             togglePlaying();
+            return false;
           }
         }}
       >
@@ -66,10 +81,26 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
           player={player}
         />
         <div className="player-controls">
-          {/* <button onClick={() => player?.seekTo(0)}>Start</button> */}
           <button className="player-play-button" onClick={togglePlaying}>
-            <FontAwesomeIcon icon={playing ? faPause : faPlay} />
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>{playing ? "Pausieren" : "Abspielen"}</Tooltip>}
+            >
+              <span>
+                <FontAwesomeIcon icon={playing ? faPause : faPlay} />
+              </span>
+            </OverlayTrigger>
           </button>
+          <span className="player-progress-time">
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>{progress.toFixed(1)} Sekunden</Tooltip>}
+            >
+              <span>
+                <Timestamp time={progress} max={60} />
+              </span>
+            </OverlayTrigger>
+          </span>
           <progress
             className="player-progress-bar"
             // animated={currentEvent !== undefined}
@@ -77,11 +108,73 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
             max={duration}
           />
           <span className="player-progress-time">
-            <Timestamp time={progress} max={60} /> /{" "}
-            <Timestamp time={duration} max={60} />
+            <OverlayTrigger
+              placement="top"
+              overlay={
+                <Tooltip>{(duration - progress).toFixed(1)} Sekunden</Tooltip>
+              }
+            >
+              <span>
+                <Timestamp time={duration - progress} max={60} />
+              </span>
+            </OverlayTrigger>
           </span>
+          <button className="player-play-button" onClick={stepBackward}>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Schritt zurück</Tooltip>}
+            >
+              <span>
+                <FontAwesomeIcon icon={faStepBackward} />
+              </span>
+            </OverlayTrigger>
+          </button>
+          <button className="player-play-button" onClick={seekBackward}>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>10s zurück</Tooltip>}
+            >
+              <span>
+                <FontAwesomeIcon icon={faBackward} />
+              </span>
+            </OverlayTrigger>
+          </button>
+          <button className="player-play-button" onClick={seekForward}>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>10s weiter</Tooltip>}
+            >
+              <span>
+                <FontAwesomeIcon icon={faForward} />
+              </span>
+            </OverlayTrigger>
+          </button>
+          <button className="player-play-button" onClick={stepForward}>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Schritt weiter</Tooltip>}
+            >
+              <span>
+                <FontAwesomeIcon icon={faStepForward} />
+              </span>
+            </OverlayTrigger>
+          </button>
+          <button className="player-play-button" onClick={seekStart}>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Zurück zum Anfang</Tooltip>}
+            >
+              <span>
+                <FontAwesomeIcon icon={faUndo} />
+              </span>
+            </OverlayTrigger>
+          </button>
         </div>
-        <button className="player-big-play-button" onClick={togglePlaying}>
+        <button
+          className="player-big-play-button"
+          onClick={togglePlaying}
+          style={playing ? {} : { paddingLeft: "0.6rem" }}
+        >
           <FontAwesomeIcon icon={playing ? faPause : faPlay} size="4x" />
         </button>
       </Container>

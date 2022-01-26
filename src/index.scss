@@ -46,8 +46,8 @@ html {
     position: absolute;
     top: 0;
     right: 0;
-    width: calc(50% - 2rem);
     height: calc(50% - 2.5rem);
+    aspect-ratio: 1 / 1;
     background: rgba(grey, 0.5);
     color: white;
     outline: 0;
@@ -56,14 +56,17 @@ html {
     margin: 1rem;
     margin-bottom: 0.5rem;
     box-shadow: 0 0 0.5rem 0 rgba(black, 0.5);
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1rem;
   }
 
   .player-option-bottom {
     position: absolute;
     bottom: 2rem;
     right: 0;
-    width: calc(50% - 2rem);
     height: calc(50% - 2.5rem);
+    aspect-ratio: 1 / 1;
     background: rgba(grey, 0.5);
     color: white;
     outline: 0;
@@ -72,6 +75,9 @@ html {
     margin: 1rem;
     margin-top: 0.5rem;
     box-shadow: 0 0 0.5rem 0 rgba(black, 0.5);
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1rem;
   }
 
   .player-controls {
@@ -127,5 +133,10 @@ html {
     outline: 0;
     border: 0;
     box-shadow: 0 0 0.5rem 0 rgba(black, 0.5);
+    display: none;
+  }
+
+  &:hover .player-big-play-button {
+    display: block;
   }
 }
