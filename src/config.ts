@@ -2,73 +2,67 @@ import { StoryPlayerProps } from "./components";
 import { EventType, Side } from "./model";
 
 export const config: StoryPlayerProps = {
-  url: "../video/Informatik studienren 2 - 4K.mp4",
+  url: "video/study-computer-science-fullhd.mp4",
   story: [
-    // {
-    //   type: EventType.Jump,
-    //   time: 1,
-    //   destination: 613,
-    // },
-
-    // Erste Aufgabe
+    // Task 1: Logic Gates
     {
       type: EventType.Choice,
-      time: 303,
+      time: 276.1 + 5, // 5 seconds after the task is shown on screen.
       top: {
         side: Side.Top,
         title: "Aktiv",
-        destination: 313.5,
+        destination: 286.1,
       },
       bottom: {
         side: Side.Bottom,
         title: "Nicht Aktiv",
-        destination: 317,
+        destination: 289.6,
       },
     },
     {
       type: EventType.Jump,
-      time: 316.5,
-      destination: 339,
+      time: 289.5,
+      destination: 311.8,
     },
-    // Zweite Aufgabe
+    // Task 2: Binary Numbers
     {
       type: EventType.Choice,
-      time: 415,
+      time: 385.2 + 5, // 5 seconds after the task is shown on screen.
       top: {
         side: Side.Top,
         title: "21",
-        destination: 422.5,
+        destination: 395.1,
       },
       bottom: {
         side: Side.Bottom,
-        title: "31",
-        destination: 448,
+        title: "23",
+        destination: 420.3,
       },
     },
     {
       type: EventType.Jump,
-      time: 447,
-      destination: 466,
+      time: 420.2,
+      destination: 438.7,
     },
-    // Dritte Aufgabe
+    // // Dritte Aufgabe
     {
       type: EventType.Choice,
-      time: 595,
+      time: 564.6,
       top: {
         side: Side.Top,
         title: "IF",
-        destination: 615.3,
+        destination: 587.8,
       },
       bottom: {
         side: Side.Bottom,
         title: "WHILE",
-        destination: 602,
+        destination: 574.4,
       },
     },
     {
       type: EventType.Jump,
-      time: 614.5,
-      destination: 629.5,
+      time: 587.7,
+      destination: 602.2,
     },
   ],
 };
