@@ -59,26 +59,26 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
           currentEvent={currentEvent}
           player={player}
         />
-        <progress className="player-progress" max={duration} value={progress}>
+        {/* <progress className="player-progress" max={duration} value={progress}>
           <Timestamp time={progress} max={60} /> /{" "}
           <Timestamp time={duration} max={60} />
-        </progress>
+        </progress> */}
       </Row>
       <Row>{JSON.stringify(currentEvent)}</Row>
       <Row>
-        <Col>Duration: {duration}</Col>
-        <Col>Progress: {progress}</Col>
-        <Col>
+        {/* <Col>Duration: {duration}</Col>
+        <Col>Progress: {progress}</Col> */}
+        <Col md="auto">
           <button onClick={() => player?.seekTo(0)}>Start</button>
         </Col>
-        <Col>
+        <Col md="auto">
           {playing ? (
             <button onClick={() => setPlaying(false)}>Pause</button>
           ) : (
             <button onClick={() => setPlaying(true)}>Play</button>
           )}
         </Col>
-        <Col>
+        <Col md="auto">
           {muted ? (
             <button onClick={() => setMuted(false)}>Unmute</button>
           ) : (
