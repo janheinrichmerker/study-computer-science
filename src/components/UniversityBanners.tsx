@@ -1,5 +1,7 @@
 import { Fragment, FunctionComponent } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
+import hsa from "../img/hsa.jpg";
+import mlu from "../img/mlu.jpg";
 
 export const UniversityBanners: FunctionComponent = () => {
   return (
@@ -7,7 +9,7 @@ export const UniversityBanners: FunctionComponent = () => {
       <Row>
         <Col>
           <Card className="universty-banner bg-dark text-white">
-            <Card.Img src="img/hsa.jpg" alt="Hochschule Anhalt" />
+            <Card.Img src={hsa} alt="Hochschule Anhalt" />
             <Card.ImgOverlay>
               <Card.Title>Hochschule Anhalt</Card.Title>
               <Card.Text>
@@ -34,7 +36,7 @@ export const UniversityBanners: FunctionComponent = () => {
       <Row>
         <Col>
           <Card className="universty-banner bg-dark text-white">
-            <Card.Img src="img/mlu.jpg" alt="Martin-Luther-Universität" />
+            <Card.Img src={mlu} alt="Martin-Luther-Universität" />
             <Card.ImgOverlay>
               <Card.Title>Martin-Luther-Universität</Card.Title>
               <Card.Text>
