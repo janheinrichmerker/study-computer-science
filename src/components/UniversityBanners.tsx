@@ -6,11 +6,6 @@ export const UniversityBanners: FunctionComponent = () => {
     <Fragment>
       <Row>
         <Col>
-          <h2>Informatik studieren an der&#8230;</h2>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
           <Card className="universty-banner bg-dark text-white">
             <Card.Img src="img/hsa.jpg" alt="Hochschule Anhalt" />
             <Card.ImgOverlay>
