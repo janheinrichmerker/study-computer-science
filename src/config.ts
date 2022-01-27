@@ -44,7 +44,7 @@ export const config: StoryPlayerProps = {
       time: 420.2,
       destination: 438.7,
     },
-    // // Dritte Aufgabe
+    // Task 3: Pseudocode
     {
       type: EventType.Choice,
       time: 564.6,

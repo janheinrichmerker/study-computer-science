@@ -10,8 +10,8 @@ import {
   faUndo,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Fragment, FunctionComponent, useRef, useState } from "react";
-import { Container, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { FunctionComponent, useRef, useState } from "react";
+import { OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import { OptionButton, Timestamp } from ".";
 import { EventType, Side, Story } from "../model";
@@ -56,22 +56,18 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
 
   const [idle, setIdle] = useState<boolean>(false);
   useIdleTimer({
-    timeout: 750,
+    timeout: 1000,
     onIdle: () => setIdle(true),
     onActive: () => setIdle(false),
   });
 
   return (
-    <Container
+    <Row
       className={
         "player-container" + (idle ? " idle" : "") + (playing ? " playing" : "")
       }
-      onKeyPress={(event) => {
-        if (event.key === " ") {
-          togglePlaying();
-          return false;
-        }
-      }}
+      onKeyPress={(event) => (event.key === " " ? togglePlaying() : undefined)}
+      onClick={togglePlaying}
     >
       <FullScreen handle={fullScreenHandle}>
         <ReactPlayer
@@ -218,6 +214,6 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
           <FontAwesomeIcon icon={playing ? faPause : faPlay} size="4x" />
         </button>
       </FullScreen>
-    </Container>
+    </Row>
   );
 };
