@@ -1,10 +1,12 @@
+import { env } from "process";
 import { StoryPlayerProps } from "./components";
 import { EventType, Side } from "./model";
 
-import video from "./video/study-computer-science-4k.mp4";
+import video4k from "./video/study-computer-science-4k.mp4";
+import videoFullHd from "./video/study-computer-science-fullhd.mp4";
 
 export const config: StoryPlayerProps = {
-  url: video,
+  url: env.CI ? videoFullHd : video4k,
   story: [
     // Task 1: Logic Gates
     {

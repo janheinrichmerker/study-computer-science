@@ -34,16 +34,13 @@ jobs:
     needs:
       - build
     runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node: [14]
     steps:
       - name: "📥 Check-out"
         uses: actions/checkout@v2
       - name: "🧰 Install Node.js"
         uses: actions/setup-node@v2.1.5
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 17
       - name: "♻️ Cache dependencies"
         uses: actions/cache@v2.1.4
         with:
