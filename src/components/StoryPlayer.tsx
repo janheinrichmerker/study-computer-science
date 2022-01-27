@@ -67,7 +67,6 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
         "player-container" + (idle ? " idle" : "") + (playing ? " playing" : "")
       }
       onKeyPress={(event) => (event.key === " " ? togglePlaying() : undefined)}
-      onClick={togglePlaying}
     >
       <FullScreen handle={fullScreenHandle}>
         <ReactPlayer

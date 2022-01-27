@@ -27,17 +27,16 @@ export const AppNav: FunctionComponent = () => {
         <Navbar.Brand>Informatik studieren</Navbar.Brand>
         <Navbar.Toggle aria-controls={`${id}-collapse`} />
         <Navbar.Collapse id={`${id}-collapse`}>
-          <Nav className="mr-auto">
+          <Nav className="me-auto" />
+          <Nav>
             <Nav.Link href="https://informatik.uni-halle.de/" rel="noreferrer">
-              In Halle
+              Informatik in Halle
             </Nav.Link>
-          </Nav>
-          <Nav className="mr-auto">
             <Nav.Link
               href="https://hs-anhalt.de/hitanhalt/l-i-v-e/fachbereich-informatik-und-sprachen.html"
               rel="noreferrer"
             >
-              In Köthen
+              Informatik in Köthen
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
