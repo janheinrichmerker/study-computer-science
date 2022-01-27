@@ -27,7 +27,7 @@ export const UniversityBanners: FunctionComponent = () => {
                 variant="primary"
                 href="https://hs-anhalt.de/nc/studieren/orientierung/studienangebot/detail/angewandte-informatik-digitale-medien-und-spieleentwicklung-bachelor-of-science-1.html"
               >
-                Go somewhere
+                Weiter lesen
               </Button>
             </Card.ImgOverlay>
           </Card>
@@ -52,7 +52,7 @@ export const UniversityBanners: FunctionComponent = () => {
                 variant="primary"
                 href="https://studieninfo.informatik.uni-halle.de/unsere-studiengaenge/informatik/"
               >
-                Go somewhere
+                Weiter lesen
               </Button>
             </Card.ImgOverlay>
           </Card>
