@@ -1,8 +1,9 @@
 import { StoryPlayerProps } from "./components";
 import { EventType, Side } from "./model";
 
+
 export const config: StoryPlayerProps = {
-  url: "video/study-computer-science-fullhd.mp4",
+  url: process.env.PUBLIC_URL + "/video/study-computer-science-4k.mp4",
   story: [
     // Task 1: Logic Gates
     {
