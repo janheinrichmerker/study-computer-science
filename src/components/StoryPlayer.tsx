@@ -16,6 +16,7 @@ import ReactPlayer from "react-player";
 import { OptionButton, Timestamp } from ".";
 import { EventType, Side, Story } from "../model";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
+import { useIdleTimer } from "react-idle-timer";
 
 export interface StoryPlayerProps {
   story: Story;
@@ -53,9 +54,18 @@ export const StoryPlayer: FunctionComponent<StoryPlayerProps> = ({
 
   const fullScreenHandle = useFullScreenHandle();
 
+  const [idle, setIdle] = useState<boolean>(false);
+  useIdleTimer({
+    timeout: 750,
+    onIdle: () => setIdle(true),
+    onActive: () => setIdle(false),
+  });
+
   return (
     <Container
-      className="player-container"
+      className={
+        "player-container" + (idle ? " idle" : "") + (playing ? " playing" : "")
+      }
       onKeyPress={(event) => {
         if (event.key === " ") {
           togglePlaying();

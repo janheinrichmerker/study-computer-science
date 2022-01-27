@@ -114,10 +114,10 @@ html {
         border-radius: 0.25rem;
       }
     }
-  }
 
-  .player-progress-time {
-    font-size: 0.75rem;
+    .player-progress-time {
+      font-size: 0.75rem;
+    }
   }
 
   .player-big-play-button {
@@ -133,10 +133,13 @@ html {
     outline: 0;
     border: 0;
     box-shadow: 0 0 0.5rem 0 rgba(black, 0.5);
-    display: none;
   }
 
-  &:hover .player-big-play-button {
-    display: block;
+  &.playing:not(:hover),
+  &.playing.idle {
+    .player-big-play-button,
+    .player-controls {
+      display: none;
+    }
   }
 }
