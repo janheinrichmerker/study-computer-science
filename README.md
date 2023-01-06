@@ -1,4 +1,4 @@
-[![CI](https://img.shields.io/github/workflow/status/heinrichreimer/study-computer-science/CI?style=flat-square)](https://github.com/heinrichreimer/study-computer-science/actions?query=workflow%3A"CI")
+[![CI](https://img.shields.io/github/actions/workflow/status/heinrichreimer/study-computer-science/ci.yml?branch=main&style=flat-square)](https://github.com/heinrichreimer/study-computer-science/actions/workflows/ci.yml)
 [![Code coverage](https://img.shields.io/codecov/c/github/heinrichreimer/study-computer-science?style=flat-square)](https://codecov.io/github/heinrichreimer/study-computer-science/)
 [![Issues](https://img.shields.io/github/issues/heinrichreimer/study-computer-science?style=flat-square)](https://github.com/heinrichreimer/study-computer-science/issues)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/heinrichreimer/study-computer-science?style=flat-square)](https://github.com/heinrichreimer/study-computer-science/commits)
