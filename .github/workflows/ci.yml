@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - name: "♻️ Cache dependencies"
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
@@ -42,7 +42,7 @@ jobs:
         with:
           node-version: 17
       - name: "♻️ Cache dependencies"
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
