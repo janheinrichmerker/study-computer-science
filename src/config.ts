@@ -1,7 +1,7 @@
 import { StoryPlayerProps } from "./components";
 import { EventType, Side } from "./model";
 
-import video from "./video/study-computer-science-4k.mp4";
+import video from "./video/study-computer-science-4k.webm";
 // import video from "./video/study-computer-science-fullhd.webm";
 
 export const config: StoryPlayerProps = {
