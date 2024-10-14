@@ -1,8 +1,8 @@
-[![CI](https://img.shields.io/github/actions/workflow/status/heinrichreimer/study-computer-science/ci.yml?branch=main&style=flat-square)](https://github.com/heinrichreimer/study-computer-science/actions/workflows/ci.yml)
-[![Code coverage](https://img.shields.io/codecov/c/github/heinrichreimer/study-computer-science?style=flat-square)](https://codecov.io/github/heinrichreimer/study-computer-science/)
-[![Issues](https://img.shields.io/github/issues/heinrichreimer/study-computer-science?style=flat-square)](https://github.com/heinrichreimer/study-computer-science/issues)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/heinrichreimer/study-computer-science?style=flat-square)](https://github.com/heinrichreimer/study-computer-science/commits)
-[![License](https://img.shields.io/github/license/heinrichreimer/study-computer-science?style=flat-square)](LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/janheinrichmerker/study-computer-science/ci.yml?branch=main&style=flat-square)](https://github.com/janheinrichmerker/study-computer-science/actions/workflows/ci.yml)
+[![Code coverage](https://img.shields.io/codecov/c/github/janheinrichmerker/study-computer-science?style=flat-square)](https://codecov.io/github/janheinrichmerker/study-computer-science/)
+[![Issues](https://img.shields.io/github/issues/janheinrichmerker/study-computer-science?style=flat-square)](https://github.com/janheinrichmerker/study-computer-science/issues)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/janheinrichmerker/study-computer-science?style=flat-square)](https://github.com/janheinrichmerker/study-computer-science/commits)
+[![License](https://img.shields.io/github/license/janheinrichmerker/study-computer-science?style=flat-square)](LICENSE)
 
 # 📽️ study-computer-science
 

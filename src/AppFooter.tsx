@@ -41,7 +41,7 @@ export const AppFooter: FunctionComponent = () => {
               Privacy
             </Nav.Link>
             <Nav.Link
-              href="https://github.com/heinrichreimer/study-computer-science/"
+              href="https://github.com/janheinrichmerker/study-computer-science/"
               target="_blank"
               rel="noreferrer"
             >
